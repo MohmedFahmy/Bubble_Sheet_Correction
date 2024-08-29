@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+    <div style="height: 20px;"></div>
+    <div class="container">
+        <div class="alert alert-primary" role="alert">upload bubble sheet image to correct it</div>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="formFile" class="form-label"></label>
+                <input class="form-control" name="file" type="file" id="formFile">
+            </div>
+            <button type="submit" class="btn btn-success">correct bubble sheet</button>
+        </form>
+        {% if filename %}
+        <img src="/static/uploads/{{ filename }}" alt="" style="width: 500px;height: 400px;">
+        <div class="alert alert-primary" role="alert">mark in exam = {{ score }}</div>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static',filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/javascript.js') }}"></script>
+</body>
+</html>
